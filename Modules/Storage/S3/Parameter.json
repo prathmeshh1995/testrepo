@@ -1,0 +1,17 @@
+{
+  "Parameters" : {
+    "BucketName" : "kz-s3-fm-dev02",
+    "ACL" : "Private",
+	"Versioning" : "Suspended",
+	"Encryption" : "true",
+	"KmsKeyId" : "12345678-aaaa-bbbb-cccc-123456789abc",
+	"Region" : "APAC",
+	"Environment": "dev"
+	"Country" : "Kazakhstan",
+	"BusinessUnit": "Data Analytics",
+	"ProjectName": "Facility Management",
+	"AppOwnerName": "Berik Aidaraliev",
+	"ApplicationName": "Facility Management Dashboards",
+	"SecurityClassification": "Restricted"
+  }
+}
