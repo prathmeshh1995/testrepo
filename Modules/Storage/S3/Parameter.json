@@ -6,7 +6,6 @@
 	"Encryption" : "true",
 	"KmsKeyId" : "12345678-aaaa-bbbb-cccc-123456789abc",
 	"Region" : "APAC",
-	"Environment": "dev"
 	"Country" : "Kazakhstan",
 	"BusinessUnit": "Data Analytics",
 	"ProjectName": "Facility Management",
