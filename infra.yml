@@ -34,11 +34,5 @@ steps:
     templateParametersFile: '$(RepoName)/Modules/Storage/S3/Parameter.json'
     templateParameters: |
       - ParameterKey: BucketName
-        ParameterValue: "$(BucketName)"
-      - ParameterKey: Environment
-        ParameterValue: "$(Environment)"
-      - ParameterKey: ResourceOwnerName
-        ParameterValue: "$(ResourceOwnerName)"
-      - ParameterKey: Region
-        ParameterValue: "$(Region)"
+        ParameterValue: ckvks3storage289
     capabilityAutoExpand: true
