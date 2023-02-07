@@ -10,7 +10,7 @@ variables:
 - group: AWS-VG
 
 - name: S3
-  value: 'false'
+  value: 'true'
 
 trigger:
 - none
