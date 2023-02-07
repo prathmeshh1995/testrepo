@@ -10,8 +10,11 @@ variables:
 - group: AWS-VG
 
 - name: S3
-  value: 'true'
+  value: 'false'
 
+- name: SecretManager
+  value: 'true'
+  
 trigger:
 - none
 
@@ -32,4 +35,16 @@ steps:
     templateSource: 'file'
     templateFile: 'IaC-Automation/Modules/Storage/S3/Template.yml'
     templateParametersFile: 'AWS-Infra/Modules/Storage/S3/Parameter.json'
+    capabilityAutoExpand: true
+
+- task: CloudFormationCreateOrUpdateStack@1
+  displayName: Secret Manager Template
+  condition: eq('${{ variables.SecretManager}}', 'true')
+  inputs:
+    awsCredentials: 'AWS-Connection'
+    regionName: 'us-east-1'
+    stackName: 'stack27dhsjj'
+    templateSource: 'file'
+    templateFile: 'IaC-Automation/Modules/Security/SecretManager/Template.yml'
+    templateParametersFile: 'AWS-Infra/Modules/Security/SecretManager/Parameter.json'
     capabilityAutoExpand: true
