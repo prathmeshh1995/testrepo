@@ -1,16 +1,26 @@
-{
-  "Parameters" : {
-    "BucketName" : "kz-s3-fm-dev02",
-    "ACL" : "Private",
-	"Versioning" : "Suspended",
-	"Encryption" : "true",
-	"KmsKeyId" : "12345678-aaaa-bbbb-cccc-123456789abc",
-	"Region" : "APAC",
-	"Country" : "Kazakhstan",
-	"BusinessUnit": "Data Analytics",
-	"ProjectName": "Facility Management",
-	"AppOwnerName": "Berik Aidaraliev",
-	"ApplicationName": "Facility Management Dashboards",
-	"SecurityClassification": "Restricted"
-  }
-}
+[
+	{
+		"ParameterKey":"BucketName",
+		"ParameterValue":"s3cptg18gop"},
+	{
+		"ParameterKey":"Versioning",
+		"ParameterValue":"Suspended"},
+	{
+		"ParameterKey":"ACL",
+		"ParameterValue":"Private"},
+	{
+		"ParameterKey":"Encryption",
+		"ParameterValue":"true"},
+    {
+		"ParameterKey":"KmsKeyId",
+		"ParameterValue":"12345678-aaaa-bbbb-cccc-123456789abc"},
+	{
+		"ParameterKey":"Environment",
+		"ParameterValue":"Dev"},
+	{
+		"ParameterKey":"ResourceOwnerName",
+		"ParameterValue":"VS"},
+	{
+		"ParameterKey":"Region",
+		"ParameterValue":"cptg"}		
+]
