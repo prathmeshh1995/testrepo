@@ -1,13 +1,16 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: CPTG S3 Template Landing ZONE
+Description: Compass S3 Template for Raw ZONE
+
 ###############################################################################
 # Parameters 
 ###############################################################################  
+ 
 Parameters:
   BucketName: 
     Type: String
     Description: What name would you like to use for the S3 Bucket?
     # Bucket Restrictions: "https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html"
+    AllowedPattern: "^([a-z0-9]{1}[a-z0-9-]{1,61}[a-z0-9]{1})$"
     ConstraintDescription: "Bucket names must start and end with a letter or number, and be between 3 and 63 characters in length."
   ACL:
     Type: String
@@ -44,7 +47,6 @@ Parameters:
   KmsKeyId:
     Type: String
     Description: Would you like to use a custom KMS Key for encryption?  (Requires a valid KMS Key Id)
-    AllowedPattern: "^([a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12})$"
     Default: "12345678-aaaa-bbbb-cccc-123456789abc"
   Versioning:
     Type: String
@@ -53,26 +55,25 @@ Parameters:
       - "Enabled"
       - "Suspended"
     Default: "Suspended"
+    
 ###########################################################################
 # Mandatory tags that will be added to all resources that support tags
 ###########################################################################
-  ResourceOwnerName:
-    Type: String
-    Description: AWS Landing Zone ResourceOwnerName
+
   Environment:
     Type: String
-    Description: The Environment tag is used to designate the Environment Stage of the associated AWS resource.
-    AllowedValues:
-      - "Dev"
-      - "Test"
-      - "Pre-prod"
-      - "Prod"
-  Region:
+    Description: Env name.
+  ResourceOwnerName:
     Type: String
-    Description: which region
+    Description: Owner name of resource.
+  Region:
+   Type: String
+   Description: Which Region.               
+    
 ###############################################################################
 # Parameter groups
 ###############################################################################
+
 Metadata:
   Purpose:
     Description: "This template is used to create a single S3 bucket for basic object storage. Parameters 
@@ -80,9 +81,11 @@ Metadata:
                   custom KMS Key) and enable object versioning.  On successful resource creation both the 
                   bucket url and arn will be exported and available for import in other CloudFormation 
                   templates."
+
+
   AWS::CloudFormation::Interface:
     ParameterGroups:
-      -  
+      - 
         Label:
           default: "S3 Bucket Configuration Parameters"
         Parameters:
@@ -96,25 +99,33 @@ Metadata:
           default: "Mandatory Tags"
           Parameters:
             - ResourceOwnerName
-            - Environment
             - Region
+            - Environment
+            
 ###############################################################################
 # Conditions
 ###############################################################################
+ 
 Conditions:
   hasACL:
     !Not [!Equals [!Ref ACL, "None"]]
+ 
   isEncrypted:
     !Equals [!Ref Encryption, "true"]
+ 
   hasKmsKey:
     !Not [!Equals [!Ref KmsKeyId, "12345678-aaaa-bbbb-cccc-123456789abc"]]
+ 
   useCustomKey: !And
   - Condition: isEncrypted
   - Condition: hasKmsKey
+ 
 ###############################################################################
 # Resources 
 ###############################################################################  
+
 Resources:
+ 
   Bucket:
     Type: AWS::S3::Bucket
     Properties:
@@ -128,23 +139,29 @@ Resources:
       VersioningConfiguration:
         Status: !Ref Versioning
       Tags: 
-        -
+        - 
           Key: ResourceOwnerName
           Value: !Ref ResourceOwnerName
+          
+        -
+          Key: Region
+          Value: !Ref Region
+        
         -
           Key: Environment
           Value: !Ref Environment
-        -
-          Key: Region
-          Value: !Ref Region         
+          
 ###############################################################################
 # Outputs 
 ###############################################################################  
+ 
 Outputs:
+ 
   BucketURL:
     Value: !Join ['', ["https://", !GetAtt Bucket.DomainName]]
     Export:
       Name: !Join ['', [!Ref "AWS::StackName", "BucketURL"]]
+ 
   BucketARN:
     Value: !GetAtt Bucket.Arn
     Export:
