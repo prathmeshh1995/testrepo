@@ -1,0 +1,17 @@
+[
+	{
+		"ParameterKey":"SecretManagerName",
+		"ParameterValue":"smanagertest"},
+	{
+		"ParameterKey":"PasswordLength",
+		"ParameterValue":"15"},
+	{
+		"ParameterKey":"Environment",
+		"ParameterValue":"Dev"},
+	{
+		"ParameterKey":"ResourceOwnerName",
+		"ParameterValue":"VS"},
+	{
+		"ParameterKey":"Region",
+		"ParameterValue":"cptg"}		
+]
