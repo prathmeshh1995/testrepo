@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: Compass S3 Template for Raw ZONE
+Description: Generic S3 Template
 
 ###############################################################################
 # Parameters 
@@ -10,7 +10,6 @@ Parameters:
     Type: String
     Description: What name would you like to use for the S3 Bucket?
     # Bucket Restrictions: "https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html"
-    AllowedPattern: "^([a-z0-9]{1}[a-z0-9-]{1,61}[a-z0-9]{1})$"
     ConstraintDescription: "Bucket names must start and end with a letter or number, and be between 3 and 63 characters in length."
   ACL:
     Type: String

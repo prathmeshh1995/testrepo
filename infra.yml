@@ -6,6 +6,12 @@ resources:
       name: YASH-IaC-Centralized-AWS/IaC-Automation
       ref: refs/heads/main
 
+variables:
+- group: AWS-VG
+
+- name: S3
+  value: 'true'
+
 trigger:
 - none
 
@@ -17,10 +23,12 @@ steps:
 - checkout: self
 
 - task: CloudFormationCreateOrUpdateStack@1
+  displayName: S3 Template
+  condition: eq('${{ variables.S3}}', 'true')
   inputs:
-    awsCredentials: 'AWS-Connection'
+    awsCredentials: '$(ServiceConnection)'
     regionName: 'us-east-1'
-    stackName: 'test8294devops'
+    stackName: '$(StackName)'
     templateSource: 'file'
     templateFile: 'IaC-Automation/Modules/Storage/S3/Template.yml'
     templateParametersFile: 'AWS-Infra/Modules/Storage/S3/Parameter.json'
