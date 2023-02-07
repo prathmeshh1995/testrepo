@@ -32,4 +32,5 @@ steps:
     templateSource: 'file'
     templateFile: 'IaC-Automation/Modules/Storage/S3/Template.yml'
     templateParametersFile: '$(RepoName)/Modules/Storage/S3/Parameter.json'
+    templateParameters: '-BucketName sonutests39fji'
     capabilityAutoExpand: true
