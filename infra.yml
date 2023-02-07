@@ -31,13 +31,5 @@ steps:
     stackName: '$(StackName)'
     templateSource: 'file'
     templateFile: 'IaC-Automation/Modules/Storage/S3/Template.yml'
-    templateParameters: |
-      - ParameterKey: BucketName
-        ParameterValue: 'ckvks3storage289'
-      - ParameterKey: Environment
-        ParameterValue: 'dev'
-      - ParameterKey: ResourceOwnerName
-        ParameterValue: 'Chandrakant'
-      - ParameterKey: Region
-        ParameterValue: 'US'
+    templateParametersFile: 'AWS-Infra/Modules/Storage/S3/Parameter.json'
     capabilityAutoExpand: true
