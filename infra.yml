@@ -10,10 +10,10 @@ variables:
 - group: AWS-VG
 
 - name: S3
-  value: 'true'
+  value: 'false'
 
 - name: SecretManager
-  value: 'true'
+  value: 'false'
   
 trigger:
 - none
