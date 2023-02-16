@@ -14,7 +14,10 @@ variables:
 
 - name: SecretManager
   value: 'false'
-  
+
+- name: VPC
+  value: 'false'
+
 trigger:
 - none
 
@@ -47,4 +50,16 @@ steps:
     templateSource: 'file'
     templateFile: 'IaC-Automation/Modules/Security/SecretManager/Template.yml'
     templateParametersFile: '$(RepoName)/Modules/Security/SecretManager/Parameter.json'
+    capabilityAutoExpand: true
+
+- task: CloudFormationCreateOrUpdateStack@1
+  displayName: VPC Template
+  condition: eq('${{ variables.VPC}}', 'true')
+  inputs:
+    awsCredentials: '$(ServiceConnection)'
+    regionName: 'us-east-1'
+    stackName: '$(StackName)'
+    templateSource: 'file'
+    templateFile: 'IaC-Automation/Modules/Networking/VPC/Template.yml'
+    templateParametersFile: '$(RepoName)/Modules/Networking/VPC/Parameter.json'
     capabilityAutoExpand: true
