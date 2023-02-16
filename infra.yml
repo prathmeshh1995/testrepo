@@ -22,7 +22,10 @@ variables:
   value: 'false'
 
 - name: Lambda
-  value: 'true'
+  value: 'false'
+
+- name: AtehnaWG
+  value: 'false'
 
 trigger:
 - none
@@ -92,4 +95,16 @@ steps:
     templateSource: 'file'
     templateFile: 'IaC-Automation/Modules/Compute/Lambda/Template.json'
     templateParametersFile: '$(RepoName)/Modules/Compute/Lambda/Parameter.json'
+    capabilityAutoExpand: true
+
+- task: CloudFormationCreateOrUpdateStack@1
+  displayName: Athena WG Template
+  condition: eq('${{ variables.AtehnaWG}}', 'true')
+  inputs:
+    awsCredentials: '$(ServiceConnection)'
+    regionName: 'us-east-1'
+    stackName: '$(StackName)'
+    templateSource: 'file'
+    templateFile: 'IaC-Automation/Modules/Analytics/AthenaWorkgroup/Template.json'
+    templateParametersFile: '$(RepoName)/Modules/Analytics/AthenaWorkgroup/Parameter.json'
     capabilityAutoExpand: true
