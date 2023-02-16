@@ -15,12 +15,27 @@
 		"ParameterKey":"KmsKeyId",
 		"ParameterValue":"12345678-aaaa-bbbb-cccc-123456789abc"},
 	{
+		"ParameterKey":"BUSINESSUNIT",
+		"ParameterValue":"BG5-BU5"},
+	{
+		"ParameterKey":"COMPANY",
+		"ParameterValue":"YASH"},
+	{
+		"ParameterKey":"DATACLASSIFICATION",
+		"ParameterValue":"Confidential"},
+	{
+		"ParameterKey":"SERVICEFAMILY",
+		"ParameterValue":"DATA"},
+	{
+		"ParameterKey":"SERVICENAME",
+		"ParameterValue":"Data Management"},
+	{
+		"ParameterKey":"SERVICEOWNER",
+		"ParameterValue":"dhanunjay.kondapally@yash.com"},
+	{
+		"ParameterKey":"SUPPORT",
+		"ParameterValue":"ankur.jain@yash.com"},
+	{
 		"ParameterKey":"Environment",
-		"ParameterValue":"Dev"},
-	{
-		"ParameterKey":"ResourceOwnerName",
-		"ParameterValue":"VS"},
-	{
-		"ParameterKey":"Region",
-		"ParameterValue":"cptg"}		
+		"ParameterValue":"Dev"}		
 ]
