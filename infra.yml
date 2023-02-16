@@ -21,6 +21,9 @@ variables:
 - name: SNS
   value: 'false'
 
+- name: Lambda
+  value: 'true'
+
 trigger:
 - none
 
@@ -68,7 +71,7 @@ steps:
     capabilityAutoExpand: true
 
 - task: CloudFormationCreateOrUpdateStack@1
-  displayName: VPC Template
+  displayName: SNS Template
   condition: eq('${{ variables.SNS}}', 'true')
   inputs:
     awsCredentials: '$(ServiceConnection)'
@@ -77,4 +80,16 @@ steps:
     templateSource: 'file'
     templateFile: 'IaC-Automation/Modules/Notification/SNS/Template.yml'
     templateParametersFile: '$(RepoName)/Modules/Notification/SNS/Parameter.json'
+    capabilityAutoExpand: true
+
+- task: CloudFormationCreateOrUpdateStack@1
+  displayName: Lambda Template
+  condition: eq('${{ variables.Lambda}}', 'true')
+  inputs:
+    awsCredentials: '$(ServiceConnection)'
+    regionName: 'us-east-1'
+    stackName: '$(StackName)'
+    templateSource: 'file'
+    templateFile: 'IaC-Automation/Modules/Compute/Lambda/Template.json'
+    templateParametersFile: '$(RepoName)/Modules/Compute/Lambda/Parameter.json'
     capabilityAutoExpand: true
