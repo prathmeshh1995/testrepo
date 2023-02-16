@@ -18,6 +18,9 @@ variables:
 - name: VPC
   value: 'false'
 
+- name: SNS
+  value: 'false'
+
 trigger:
 - none
 
@@ -62,4 +65,16 @@ steps:
     templateSource: 'file'
     templateFile: 'IaC-Automation/Modules/Networking/VPC/Template.yml'
     templateParametersFile: '$(RepoName)/Modules/Networking/VPC/Parameter.json'
+    capabilityAutoExpand: true
+
+- task: CloudFormationCreateOrUpdateStack@1
+  displayName: VPC Template
+  condition: eq('${{ variables.SNS}}', 'true')
+  inputs:
+    awsCredentials: '$(ServiceConnection)'
+    regionName: 'us-east-1'
+    stackName: '$(StackName)'
+    templateSource: 'file'
+    templateFile: 'IaC-Automation/Modules/Notification/SNS/Template.yml'
+    templateParametersFile: '$(RepoName)/Modules/Notification/SNS/Parameter.json'
     capabilityAutoExpand: true
