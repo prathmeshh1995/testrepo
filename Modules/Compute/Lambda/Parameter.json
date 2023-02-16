@@ -1,0 +1,35 @@
+[
+	{
+	    "ParameterKey":"FunctionName",
+		"ParameterValue":"cptg-main-lam-fun01"},
+    {
+		"ParameterKey":"Role",
+		"ParameterValue":"arn:aws:iam::847370586410:role/Compass-Lambda"},
+    {
+		"ParameterKey":"Runtime",
+		"ParameterValue":"python3.7"},
+	{
+		"ParameterKey":"BUSINESSUNIT",
+		"ParameterValue":"BG5-BU5"},
+	{
+		"ParameterKey":"COMPANY",
+		"ParameterValue":"YASH"},
+	{
+		"ParameterKey":"DATACLASSIFICATION",
+		"ParameterValue":"Confidential"},
+	{
+		"ParameterKey":"SERVICEFAMILY",
+		"ParameterValue":"DATA"},
+	{
+		"ParameterKey":"SERVICENAME",
+		"ParameterValue":"Data Management"},
+	{
+		"ParameterKey":"SERVICEOWNER",
+		"ParameterValue":"dhanunjay.kondapally@yash.com"},
+	{
+		"ParameterKey":"SUPPORT",
+		"ParameterValue":"ankur.jain@yash.com"},
+	{
+		"ParameterKey":"Environment",
+		"ParameterValue":"Dev"}		
+]
