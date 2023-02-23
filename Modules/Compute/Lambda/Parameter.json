@@ -4,7 +4,7 @@
 		"ParameterValue":"cptg-main-lam-fun01"},
     {
 		"ParameterKey":"Role",
-		"ParameterValue":"arn:aws:iam::754307369999:role/Compass-Lambda"},
+		"ParameterValue":"arn:aws:iam::754307369999:role/AWSS3FullAccessLambda"},
     {
 		"ParameterKey":"Runtime",
 		"ParameterValue":"python3.7"},
