@@ -28,7 +28,7 @@ variables:
   value: 'false'
 
 - name: GlueJob
-  value: 'false'
+  value: 'true'
 
 trigger:
 - none
