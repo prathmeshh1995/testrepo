@@ -109,7 +109,7 @@ steps:
     stackName: '$(StackName)'
     templateSource: 'file'
     templateFile: 'IaC-Automation/Modules/Analytics/AthenaWorkgroup/Template.json'
-    templateParametersFile: '$(RepoName)/Modules/Analytics/AthenaWorkgroup/Parameter.json'
+    templateParametersFile: '$(RepoName)/Modules/Analytics/AthenaWG/Parameter.json'
     capabilityAutoExpand: true
 
 - task: CloudFormationCreateOrUpdateStack@1
