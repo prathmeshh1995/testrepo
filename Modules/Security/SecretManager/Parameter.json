@@ -1,3 +1,4 @@
+
 [
 	{
 		"ParameterKey":"SecretManagerName",
@@ -6,14 +7,8 @@
 		"ParameterKey":"PasswordLength",
 		"ParameterValue":"15"},
 	{
-		"ParameterKey":"Environment",
-		"ParameterValue":"Dev"},
-	{
 		"ParameterKey":"ResourceOwnerName",
 		"ParameterValue":"VS"},
-	{
-		"ParameterKey":"Region",
-		"ParameterValue":"cptg"},	
 	{
 		"ParameterKey":"BUSINESSUNIT",
 		"ParameterValue":"BG5-BU5"},
@@ -38,4 +33,5 @@
 	{
 		"ParameterKey":"Environment",
 		"ParameterValue":"Dev"}		
-]
+]	
+	
