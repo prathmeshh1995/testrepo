@@ -10,7 +10,7 @@ variables:
 - group: AWS-iaC
 
 - name: S3
-  value: 'false'
+  value: 'true'
 
 - name: SecretManager
   value: 'false'
@@ -28,7 +28,7 @@ variables:
   value: 'false'
 
 - name: GlueJob
-  value: 'true'
+  value: 'false'
 
 trigger:
 - none
