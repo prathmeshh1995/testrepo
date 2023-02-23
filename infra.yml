@@ -13,22 +13,22 @@ variables:
   value: 'true'
 
 - name: SecretManager
-  value: 'false'
+  value: 'true'
 
 - name: VPC
-  value: 'false'
+  value: 'true'
 
 - name: SNS
-  value: 'false'
+  value: 'true'
 
 - name: Lambda
-  value: 'false'
+  value: 'true'
 
 - name: AtehnaWG
-  value: 'false'
+  value: 'true'
 
 - name: GlueJob
-  value: 'false'
+  value: 'true'
 
 trigger:
 - none
