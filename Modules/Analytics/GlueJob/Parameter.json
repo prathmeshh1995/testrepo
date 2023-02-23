@@ -4,7 +4,7 @@
 		"ParameterValue":"GJobforcptg"},
 	{
 		"ParameterKey":"ScriptLocation",
-		"ParameterValue":"s3://tests3cptg/test.py"},
+		"ParameterValue":"s3://demo-bkt-01/test.py"},
 	{
 		"ParameterKey":"GlueV",
 		"ParameterValue":"3.0"},
