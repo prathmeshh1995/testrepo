@@ -6,11 +6,17 @@
 		"ParameterKey":"PasswordLength",
 		"ParameterValue":"15"},
 	{
-		"ParameterKey":"BUSINESSUNIT",
-		"ParameterValue":"BG5-BU5"},
+		"ParameterKey":"Environment",
+		"ParameterValue":"Dev"},
 	{
 		"ParameterKey":"ResourceOwnerName",
-		"ParameterValue":"754307369999"},
+		"ParameterValue":"VS"},
+	{
+		"ParameterKey":"Region",
+		"ParameterValue":"cptg"},	
+	{
+		"ParameterKey":"BUSINESSUNIT",
+		"ParameterValue":"BG5-BU5"},
 	{
 		"ParameterKey":"COMPANY",
 		"ParameterValue":"YASH"},
