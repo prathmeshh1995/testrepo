@@ -1,0 +1,37 @@
+{
+  "name" : "GJobforcptg",
+  "description" : "Job created with CloudFormation using existing script",
+  "role" : "arn:aws:iam::754307369999:role/AWSGlueServiceRoleDefault",
+  "executionProperty" : {
+    "maxConcurrentRuns" : 20
+  },
+  "command" : {
+    "name" : "glueetl",
+    "scriptLocation" : "s3://demo-bkt-01/test.py",
+    "pythonVersion" : "3"
+  },
+  "defaultArguments" : {
+    "--enable-metrics" : "true",
+    "--job-bookmark-option" : "job-bookmark-disable",
+    "--enable-job-insights" : "false",
+    "--job-language" : "python",
+    "--enable-continuous-cloudwatch-log" : "true"
+  },
+  "connections" : {
+    "connections" : [ "cptg-test-connection01" ]
+  },
+  "maxRetries" : 0,
+  "allocatedCapacity" : 10,
+  "timeout" : 2880,
+  "maxCapacity" : 10.0,
+  "glueVersion" : "3.0",
+  "numberOfWorkers" : 5,
+  "workerType" : "G.2X",
+  "executionClass" : "STANDARD",
+  "sourceControlDetails" : {
+    "provider" : "GITHUB",
+    "repository" : "testrepo",
+    "branch" : "iaC-aws-pipelines",
+    "folder" : "test"
+  }
+}
