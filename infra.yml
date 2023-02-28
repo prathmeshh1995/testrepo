@@ -22,13 +22,13 @@ variables:
   value: 'false'
 
 - name: Lambda
-  value: 'true'
+  value: 'false'
 
 - name: AtehnaWG
   value: 'false'
 
 - name: GlueJob
-  value: 'false'
+  value: 'true'
 
 trigger:
 - none
